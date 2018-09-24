@@ -5,23 +5,27 @@
   <title>JQuery</title>
 </head>
 <body>
-  <button id="btn1">Show Roco</button>
+  <button id="btn1">Show Idols</button>
   <button id="btn2">Animate Roco</button>
-  <div id="butt"></div>
+  <button id="btn3">Delet Arisu</button>
+  <div id="idol"><div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
     $("#btn1").click(function(){
-      $("#butt").html("<img id='roco' src='res/roco.png' style='posiiton: relative; right: 10px;'></img>");
+      $("#idol").html("<img id='roco' width='500' height='500' src='res/roco.png'></img><br><img id='arisu' width='500' height='500' src='res/arisu.png'></img>");
     });
     $("#btn2").click(function(){
       $("#roco").animate({
         opacity: 0.25,
         left: "+=500",
         height: "toggle"
-      }, 5000, function() {
+      }, 1000, function() {
       });
+    });
+    $("#btn3").click(function(){
+      $("img").filter($("#arisu")).css("visibility","hidden");
     });
   });
 </script>
