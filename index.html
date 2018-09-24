@@ -1,7 +1,28 @@
 <html>
 <head>
-  <title>Construction</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main.css">
+  <title>JQuery</title>
 </head>
 <body>
+  <button id="btn1">Show Roco</button>
+  <button id="btn2">Animate Roco</button>
+  <div id="butt"></div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+      $("#butt").html("<img id='roco' src='res/roco.png' style='posiiton: relative; right: 10px;'></img>");
+    });
+    $("#btn2").click(function(){
+      $("#roco").animate({
+        opacity: 0.25,
+        left: "+=500",
+        height: "toggle"
+      }, 5000, function() {
+      });
+    });
+  });
+</script>
 </html>
